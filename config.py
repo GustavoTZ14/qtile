@@ -58,6 +58,11 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Abrir rofi"),
+
+    Key([mod, "shift"], "R", lazy.spawn("shutdown -r now"), desc="Reiniciar sistema"),
+    
+    # Desligar sistema com shutdown -h now (opcional)
+    Key([mod, "shift"], "S", lazy.spawn("shutdown -h now"), desc="Desligar sistema"),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -74,7 +79,7 @@ for vt in range(1, 8):
     )
 
 
-groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in "12345"]
 
 for i in groups:
     keys.extend(
@@ -133,7 +138,7 @@ screens = [
             [
                 # widget.CurrentLayout(),
                 widget.GroupBox(
-                    highlight_method='line',
+                    highlight_method='text',
                     active="#cdd6f4",
                     block_highlight_text_color="#eba0ac",
                     inactive="#585b70",
