@@ -191,8 +191,8 @@ screens = [
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
         background="#000000",
-        # wallpaper="~/Imagens/operating-system-minimalism-archlinux-wallpaper-e910088d31da3dcb8677283fc021166d.jpg",
-        wallpaper="~/Imagens/bluehour.jpg",
+        wallpaper="~/Imagens/operating-system-minimalism-archlinux-wallpaper-e910088d31da3dcb8677283fc021166d.jpg",
+        # wallpaper="~/Imagens/bluehour.jpg",
         wallpaper_mode="fill",
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
