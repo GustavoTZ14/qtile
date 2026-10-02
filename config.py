@@ -150,37 +150,56 @@ screens = [
                     padding=5
                 ),
                 widget.Prompt(),
-                widget.WindowName(
-                    foreground="#f5e0dc"
+                #widget.WindowName(
+                #foreground="#f5e0dc"
+                #),
+                widget.Spacer(length=bar.STRETCH),
+                widget.Clock(
+                    format="%d %a %I:%M %p",
+                    foreground="#eba0ac"
                 ),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
+                widget.Spacer(length=bar.STRETCH),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Net(
-                    format='{down:.0f}{down_suffix} ↓↑ {up:.0f}{up_suffix}',
-                    foreground="#cdd6f4"
+                    #format='{down:.0f}{down_suffix} ↓↑ {up:.0f}{up_suffix}',
+                    format='󰖩',
+                    padding=10,
+                    foreground="#cdd6f4",
+                    mouse_callbacks={
+                        "Button1": lazy.spawn("alacritty -e wlctl")
+                    }
                 ),
-                widget.TextBox("|", foreground="#cdd6f4"),
-                widget.CPU(
-                    foreground="#cdd6f4"
+                widget.TextBox(
+                    text="󰂯",
+                    font="JetBrainsMono Nerd Font",
+                    foreground="#cdd6f4",
+                    padding=10,
+                    mouse_callbacks={
+                        "Button1": lazy.spawn("alacritty -e bluetui")
+                    }
                 ),
-                widget.TextBox("|", foreground="#cdd6f4"),
-                widget.Memory(
-                    format='{MemUsed: .0f}{mm} -{MemTotal: .0f}{mm}',
-                    foreground="#cdd6f4"
+                widget.TextBox(
+                    text="󰕾",
+                    font="JetBrainsMono Nerd Font",
+                    foreground="#cdd6f4",
+                    padding=10,
+                    mouse_callbacks={
+                        "Button1": lazy.spawn("alacritty -e wiremix")
+                    }
                 ),
-                widget.TextBox("|", foreground="#cdd6f4"),
-                widget.Clock(
-                    format="%d-%m-%Y %a %I:%M %p",
-                    foreground="#eba0ac"
-                ),
+                #widget.TextBox("|", foreground="#cdd6f4"),
+                #widget.CPU(
+                #foreground="#cdd6f4"
+                #),
+                #widget.TextBox("|", foreground="#cdd6f4"),
+                #widget.Memory(
+                #format='{MemUsed: .0f}{mm} -{MemTotal: .0f}{mm}',
+                #foreground="#cdd6f4"
+                #),
+                #widget.TextBox("|", foreground="#cdd6f4"),
                 widget.Systray(),
                 # widget.QuickExit(),
             ],
@@ -191,8 +210,8 @@ screens = [
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
         background="#000000",
-        wallpaper="~/Imagens/operating-system-minimalism-archlinux-wallpaper-e910088d31da3dcb8677283fc021166d.jpg",
-        # wallpaper="~/Imagens/bluehour.jpg",
+        # wallpaper="~/Imagens/operating-system-minimalism-archlinux-wallpaper-e910088d31da3dcb8677283fc021166d.jpg",
+        wallpaper="~/Imagens/2-waves.png",
         wallpaper_mode="fill",
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
